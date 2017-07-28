@@ -1,0 +1,66 @@
+<html>
+  <head>
+  </head>
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:600" rel="stylesheet">
+  <style>
+    html, body {
+    height: 100%;
+    width: 100%;
+    }
+
+    body {
+    background: #F5F6F8;
+    font-size: 16px;
+    font-family: 'Open Sans', sans-serif;
+    color: #2C3E51;
+    }
+    .main {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    }
+    .main > div > div,
+    .main > div > span {
+    text-align: center;
+    }
+    .main span {
+    display: block;
+    padding: 80px 0 170px;
+    font-size: 3rem;
+    }
+    .main .app img {
+    width: 400px;
+    }
+  </style>
+  <script type="text/javascript">
+      var fallback_url = "null";
+      var store_link = "itms-apps://itunes.apple.com/US/app/id737534965?ls=1&mt=8";
+      var web_store_link = "https://itunes.apple.com/US/app/id737534965?mt=8";
+      var loc = window.location;
+      function redirect_to_web_store(loc) {
+        loc.href = web_store_link;
+      }
+      function redirect(loc) {
+        loc.href = store_link;
+        if (fallback_url.startsWith("http")) {
+          setTimeout(function() {
+            loc.href = fallback_url;
+          },5000);
+        }
+      }
+  </script>
+  <body onload="redirect(loc)">
+    <div class="main">
+      <div class="workarea">
+	<div class="logo">
+	  <img src="https://d1y332ay3ubkmn.cloudfront.net/app|id737534965.png" style="width:200px;height:200px;border-radius:20px;"/>
+	</div>
+	<span>Blind - Anonymous Work Talk</span>
+	<div class="app">
+	  <img src="app_store_badge.png" onclick="redirect_to_web_store(loc)"/>
+	</div>
+      </div>
+    </div>
+  </body>
+</html>
